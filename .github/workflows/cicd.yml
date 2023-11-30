@@ -1,0 +1,20 @@
+# This workflow will build a Java project with Gradle
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
+
+name: Flask Server with Salary Model
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  run-flask:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run: pip install -r requirements.txt  # install requirements to enable GitHub run tests
+      - run:  python main.py
+      - run:  python tests.py
