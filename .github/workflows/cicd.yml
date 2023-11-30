@@ -5,7 +5,7 @@ name: Flask Server with Salary Model
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   run-flask:
